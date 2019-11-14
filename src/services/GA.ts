@@ -1,7 +1,13 @@
 import { debounce } from 'lodash-es'
-import TagManager from 'react-gtm-module'
+import TagManager, { DataLayerArgs } from 'react-gtm-module'
 
 import { IS_DEV } from '~/config/ENV'
+
+declare global {
+    interface Window {
+        dataLayer: DataLayerArgs
+    }
+}
 
 // GA event labels
 const EVENT = {
@@ -18,10 +24,8 @@ if (!IS_DEV) {
 
 const getDataLayer = new Promise(resolve => {
     const ival = setInterval(() => {
-        // @ts-ignore
         if (window.dataLayer) {
             clearInterval(ival)
-            // @ts-ignore
             resolve(window.dataLayer)
         }
     }, 100)
