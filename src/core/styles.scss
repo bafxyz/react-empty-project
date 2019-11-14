@@ -1,0 +1,25 @@
+:root {
+    --dim-header-height: calc(50 * var(--s));
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    min-height: initial !important;
+}
+
+#root {
+    display: flex;
+    flex-grow: 0;
+    flex-shrink: 1;
+    justify-content: center;
+    flex-wrap: wrap;
+    min-height: calc(100% - var(--dim-header-height));
+}
+
+svg {
+    -webkit-backface-visibility: hidden;
+}
