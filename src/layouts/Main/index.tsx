@@ -1,7 +1,8 @@
 import React, { FC, memo } from 'react'
 import styled from '@emotion/styled'
+import ErrorBoundary from 'react-error-boundary'
 
-import { SiteFooter, SiteHeader, ErrorBoundary } from '~/components'
+import { SiteFooter, SiteHeader } from '~/components'
 import IMainLayout from './types'
 
 const Main = styled.div`
