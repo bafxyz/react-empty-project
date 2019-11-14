@@ -108,6 +108,7 @@
     },
     "lint-staged": {
         "*.{ts,tsx}": [
+            "tsc",
             "eslint --fix",
             "pretty-quick",
             "git add"
